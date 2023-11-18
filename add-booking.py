@@ -1,4 +1,5 @@
 import http.client
+import ssl
 import json
 from datetime import date
 import datetime
@@ -6,7 +7,7 @@ import time
 today = date.today()
 
 
-conn = http.client.HTTPSConnection("in.adda.io")
+conn = http.client.HTTPSConnection("in.adda.io",context = ssl._create_unverified_context())
 
 
 booking_date = today + datetime.timedelta(days=1)
@@ -14,7 +15,7 @@ booking_date = booking_date.strftime("%d-%m-%Y")
 
 print(booking_date)
 
-payload = "{\"facilityId\":\"9127\",\"bookDate\":\"%s\",\"bookDate2\":\"\",\"bookTimeFrom\":\"10:00\",\"bookTimeTo\":\"11:00\",\"slot\":\"07:30:00,08:00:00,0.00,21334\",\"isCommunity\":false,\"flatId\":\"1751168\",\"comment\":\"\",\"facilityAvailable\":true,\"min\":\"\",\"hrs\":\"\",\"book_hours\":1,\"book_mins\":0,\"book_time\":\"01:00:00\",\"limit_time1\":\"00:00:00\",\"limit_time2\":\"24:00:00\",\"msg\":\"\",\"flag\":\"\",\"multiDays\":0,\"book_start_time\":\"\",\"book_end_time\":\"\",\"fac_book_type\":\"2\",\"facility_service_tax\":0,\"refundableDeposit\":\"0.00\",\"day_wise_enabled\":\"0\"}" % booking_date
+payload = "{\"facilityId\":\"9127\",\"bookDate\":\"%s\",\"bookDate2\":\"\",\"bookTimeFrom\":\"10:00\",\"bookTimeTo\":\"11:00\",\"slot\":\"07:30:00,08:00:00,0.00,21334\",\"isCommunity\":false,\"flatId\":\"1728479\",\"comment\":\"\",\"facilityAvailable\":true,\"min\":\"\",\"hrs\":\"\",\"book_hours\":1,\"book_mins\":0,\"book_time\":\"01:00:00\",\"limit_time1\":\"00:00:00\",\"limit_time2\":\"24:00:00\",\"msg\":\"\",\"flag\":\"\",\"multiDays\":0,\"book_start_time\":\"\",\"book_end_time\":\"\",\"fac_book_type\":\"2\",\"facility_service_tax\":0,\"refundableDeposit\":\"0.00\",\"day_wise_enabled\":\"0\"}" % booking_date
 print(payload)
 headers = {
     'authority': 'in.adda.io',
@@ -40,7 +41,7 @@ print(data.decode("utf-8"))
 time.sleep(1)
 
 
-payload = "{\"facilityId\":\"9127\",\"bookDate\":\"%s\",\"bookDate2\":\"\",\"bookTimeFrom\":\"10:00\",\"bookTimeTo\":\"11:00\",\"slot\":\"08:00:00,08:30:00,0.00,21335\",\"isCommunity\":false,\"flatId\":\"1751168\",\"comment\":\"\",\"facilityAvailable\":true,\"min\":\"\",\"hrs\":\"\",\"book_hours\":1,\"book_mins\":0,\"book_time\":\"01:00:00\",\"limit_time1\":\"00:00:00\",\"limit_time2\":\"24:00:00\",\"msg\":\"\",\"flag\":\"\",\"multiDays\":0,\"book_start_time\":\"\",\"book_end_time\":\"\",\"fac_book_type\":\"2\",\"facility_service_tax\":0,\"refundableDeposit\":\"0.00\",\"day_wise_enabled\":\"0\"}" % booking_date
+payload = "{\"facilityId\":\"9127\",\"bookDate\":\"%s\",\"bookDate2\":\"\",\"bookTimeFrom\":\"10:00\",\"bookTimeTo\":\"11:00\",\"slot\":\"08:00:00,08:30:00,0.00,21335\",\"isCommunity\":false,\"flatId\":\"1728479\",\"comment\":\"\",\"facilityAvailable\":true,\"min\":\"\",\"hrs\":\"\",\"book_hours\":1,\"book_mins\":0,\"book_time\":\"01:00:00\",\"limit_time1\":\"00:00:00\",\"limit_time2\":\"24:00:00\",\"msg\":\"\",\"flag\":\"\",\"multiDays\":0,\"book_start_time\":\"\",\"book_end_time\":\"\",\"fac_book_type\":\"2\",\"facility_service_tax\":0,\"refundableDeposit\":\"0.00\",\"day_wise_enabled\":\"0\"}" % booking_date
 print(payload)
 conn.request("POST", "/ajax/post_facility.php?action=bookFacility&selected_facility_id=9127", payload, headers)
 res = conn.getresponse()
@@ -50,7 +51,7 @@ print(data.decode("utf-8"))
 
 time.sleep(1)
 
-payload = "{\"facilityId\":\"9127\",\"bookDate\":\"%s\",\"bookDate2\":\"\",\"bookTimeFrom\":\"10:00\",\"bookTimeTo\":\"11:00\",\"slot\":\"08:30:00,09:00:00,0.00,21336\",\"isCommunity\":false,\"flatId\":\"1751168\",\"comment\":\"\",\"facilityAvailable\":true,\"min\":\"\",\"hrs\":\"\",\"book_hours\":1,\"book_mins\":0,\"book_time\":\"01:00:00\",\"limit_time1\":\"00:00:00\",\"limit_time2\":\"24:00:00\",\"msg\":\"\",\"flag\":\"\",\"multiDays\":0,\"book_start_time\":\"\",\"book_end_time\":\"\",\"fac_book_type\":\"2\",\"facility_service_tax\":0,\"refundableDeposit\":\"0.00\",\"day_wise_enabled\":\"0\"}" % booking_date
+payload = "{\"facilityId\":\"9127\",\"bookDate\":\"%s\",\"bookDate2\":\"\",\"bookTimeFrom\":\"10:00\",\"bookTimeTo\":\"11:00\",\"slot\":\"08:30:00,09:00:00,0.00,21336\",\"isCommunity\":false,\"flatId\":\"1728479\",\"comment\":\"\",\"facilityAvailable\":true,\"min\":\"\",\"hrs\":\"\",\"book_hours\":1,\"book_mins\":0,\"book_time\":\"01:00:00\",\"limit_time1\":\"00:00:00\",\"limit_time2\":\"24:00:00\",\"msg\":\"\",\"flag\":\"\",\"multiDays\":0,\"book_start_time\":\"\",\"book_end_time\":\"\",\"fac_book_type\":\"2\",\"facility_service_tax\":0,\"refundableDeposit\":\"0.00\",\"day_wise_enabled\":\"0\"}" % booking_date
 print(payload)
 conn.request("POST", "/ajax/post_facility.php?action=bookFacility&selected_facility_id=9127", payload, headers)
 res = conn.getresponse()
