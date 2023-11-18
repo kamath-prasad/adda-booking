@@ -15,7 +15,7 @@ booking_date = booking_date.strftime("%d-%m-%Y")
 
 print(booking_date)
 
-payload = "{\"facilityId\":\"9127\",\"bookDate\":\"19-11-2023\",\"bookDate2\":\"\",\"bookTimeFrom\":\"10:00\",\"bookTimeTo\":\"11:00\",\"slot\":\"16:30:00,17:00:00,0.00,22824\",\"isCommunity\":false,\"flatId\":\"1728479\",\"comment\":\"\",\"facilityAvailable\":true,\"min\":\"\",\"hrs\":\"\",\"book_hours\":1,\"book_mins\":0,\"book_time\":\"01:00:00\",\"limit_time1\":\"00:00:00\",\"limit_time2\":\"24:00:00\",\"msg\":\"\",\"flag\":\"\",\"multiDays\":0,\"book_start_time\":\"\",\"book_end_time\":\"\",\"fac_book_type\":\"2\",\"facility_service_tax\":0,\"refundableDeposit\":\"0.00\",\"day_wise_enabled\":\"0\"}"
+payload = "{\"facilityId\":\"9127\",\"bookDate\":\"19-11-2023\",\"bookDate2\":\"\",\"bookTimeFrom\":\"10:00\",\"bookTimeTo\":\"11:00\",\"slot\":\"17:00:00,17:30:00,0.00,22825\",\"isCommunity\":false,\"flatId\":\"1728479\",\"comment\":\"\",\"facilityAvailable\":true,\"min\":\"\",\"hrs\":\"\",\"book_hours\":1,\"book_mins\":0,\"book_time\":\"01:00:00\",\"limit_time1\":\"00:00:00\",\"limit_time2\":\"24:00:00\",\"msg\":\"\",\"flag\":\"\",\"multiDays\":0,\"book_start_time\":\"\",\"book_end_time\":\"\",\"fac_book_type\":\"2\",\"facility_service_tax\":0,\"refundableDeposit\":\"0.00\",\"day_wise_enabled\":\"0\"}"
 print(payload)
 headers = {
     'authority': 'in.adda.io',
